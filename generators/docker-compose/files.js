@@ -55,8 +55,8 @@ function writeFiles() {
         writeKeycloakFiles() {
             if (this.authenticationType === 'oauth2' && this.applicationType !== 'microservice') {
                 this.template('keycloak.yml.ejs', 'keycloak.yml');
-                this.template('realm-config/jhipster-realm.json.ejs', 'realm-config/jhipster-realm.json');
-                this.template('realm-config/jhipster-users-0.json.ejs', 'realm-config/jhipster-users-0.json');
+                this.template('realm-config/jhipster-realm.json.ejs', `realm-config/${this.realmName}-realm.json`);
+                this.template('realm-config/jhipster-users-0.json.ejs', `realm-config/${this.realmName}-users-0.json');
             }
         },
 

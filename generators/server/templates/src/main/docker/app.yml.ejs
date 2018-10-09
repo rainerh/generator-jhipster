@@ -59,8 +59,8 @@ services:
             <%_ } _%>
             <%_ if (authenticationType === 'oauth2') { _%>
             <%_ if (applicationType === 'gateway' || applicationType === 'monolith') { _%>
-            - SECURITY_OAUTH2_CLIENT_ACCESS_TOKEN_URI=http://keycloak:9080/auth/realms/jhipster/protocol/openid-connect/token
-            - SECURITY_OAUTH2_CLIENT_USER_AUTHORIZATION_URI=http://keycloak:9080/auth/realms/jhipster/protocol/openid-connect/auth
+            - SECURITY_OAUTH2_CLIENT_ACCESS_TOKEN_URI=http://keycloak:9080/auth/realms/<%= realmName %>/protocol/openid-connect/token
+            - SECURITY_OAUTH2_CLIENT_USER_AUTHORIZATION_URI=http://keycloak:9080/auth/realms/<%= realmName %>/protocol/openid-connect/auth
             - SECURITY_OAUTH2_CLIENT_CLIENT_ID=web_app
             - SECURITY_OAUTH2_CLIENT_CLIENT_SECRET=web_app
             - SECURITY_OAUTH2_CLIENT_SCOPE=openid profile email
@@ -69,7 +69,7 @@ services:
             - SECURITY_OAUTH2_CLIENT_CLIENT_ID=internal
             - SECURITY_OAUTH2_CLIENT_CLIENT_SECRET=internal
             <%_ } _%>
-            - SECURITY_OAUTH2_RESOURCE_USER_INFO_URI=http://keycloak:9080/auth/realms/jhipster/protocol/openid-connect/userinfo
+            - SECURITY_OAUTH2_RESOURCE_USER_INFO_URI=http://keycloak:9080/auth/realms/<%= realmName %>/protocol/openid-connect/userinfo
             <%_ } _%>
             <%_ if (prodDatabaseType === 'cassandra') { _%>
             - SPRING_DATA_CASSANDRA_CONTACTPOINTS=<%= baseName.toLowerCase() %>-cassandra

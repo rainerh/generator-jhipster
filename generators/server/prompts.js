@@ -156,6 +156,19 @@ function askForServerSideOpts(meta) {
             }
         },
         {
+            when: response =>
+                ((applicationType === 'monolith' && response.serviceDiscoveryType !== 'eureka') ||
+                    ['gateway', 'microservice'].includes(applicationType)) &&
+                response.authenticationType === 'oauth2',
+
+            type: 'input',
+            name: 'realmName',
+            validate: input => (/^([a-zA-Z0-9_-]*)$/.test(input) ? true : 'The realm name you have provided is not a valid name.'),
+            message: 'What is the name of your realm?',
+            default: 'jhipster',
+            store: true
+        },
+        {
             type: 'list',
             name: 'databaseType',
             message: `Which ${chalk.yellow('*type*')} of database would you like to use?`,
@@ -324,6 +337,7 @@ function askForServerSideOpts(meta) {
         this.searchEngine = props.searchEngine;
         this.buildTool = props.buildTool;
         this.uaaBaseName = this.getUaaAppName(props.uaaBaseName).baseName;
+        this.realmName = props.realmName;
 
         if (this.databaseType === 'no') {
             this.devDatabaseType = 'no';

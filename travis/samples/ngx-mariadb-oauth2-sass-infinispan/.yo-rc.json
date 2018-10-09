@@ -5,6 +5,7 @@
     "packageFolder": "io/github/jhipster/travis",
     "serverPort": "8080",
     "authenticationType": "oauth2",
+    "realmName": "jhipster",
     "cacheProvider": "infinispan",
     "enableHibernateCache": true,
     "websocket": false,

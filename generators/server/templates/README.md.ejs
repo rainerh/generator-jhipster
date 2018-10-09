@@ -97,13 +97,13 @@ security:
         enabled: false
     oauth2:
         client:
-            accessTokenUri: http://localhost:9080/auth/realms/jhipster/protocol/openid-connect/token
-            userAuthorizationUri: http://localhost:9080/auth/realms/jhipster/protocol/openid-connect/auth
+            accessTokenUri: http://localhost:9080/auth/<%= realmName %>/jhipster/protocol/openid-connect/token
+            userAuthorizationUri: http://localhost:9080/auth/<%= realmName %>/jhipster/protocol/openid-connect/auth
             clientId: web_app
             clientSecret: web_app
             scope: openid profile email
         resource:
-            userInfoUri: http://localhost:9080/auth/realms/jhipster/protocol/openid-connect/userinfo
+            userInfoUri: http://localhost:9080/auth/realms/<%= realmName %>/protocol/openid-connect/userinfo
 ```
 
 ### Okta

@@ -2865,6 +2865,16 @@ module.exports = class extends PrivateBase {
             generator.error('when using --auth uaa, a UAA basename must be provided with --uaa-base-name');
         }
         dest.uaaBaseName = uaaBaseName;
+
+        const realmName =
+            context.options.realmName ||
+            context.configOptions.realmName||
+            context.options['realm-name'] ||
+            context.config.get('realmName');
+        if (context.options.auth === 'oauth2' && _.isNil(realmName)) {
+            generator.error('when using --auth oauth2, a realmName must be provided with --realm-name');
+        }
+        dest.realmName = realmName;
         dest.serviceDiscoveryType = context.configOptions.serviceDiscoveryType || context.config.get('serviceDiscoveryType');
 
         dest.buildTool = context.options.build;

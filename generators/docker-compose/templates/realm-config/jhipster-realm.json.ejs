@@ -465,7 +465,7 @@
       "id": "e07da50b-cddc-4524-b630-436a5a6ba8ab",
       "clientId": "account",
       "name": "${client_account}",
-      "baseUrl": "/auth/realms/jhipster/account",
+      "baseUrl": "/auth/realms/<%= realmName %>/account",
       "surrogateAuthRequired": false,
       "enabled": true,
       "clientAuthenticatorType": "client-secret",
@@ -475,7 +475,7 @@
         "manage-account"
       ],
       "redirectUris": [
-        "/auth/realms/jhipster/account/*"
+        "/auth/realms/<%= realmName %>/account/*"
       ],
       "webOrigins": [],
       "notBefore": 0,

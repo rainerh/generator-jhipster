@@ -291,6 +291,7 @@ module.exports = class extends BaseGenerator {
                     this.configOptions.prodDatabaseType = this.options.db;
                     this.configOptions.authenticationType = this.options.auth;
                     this.configOptions.uaaBaseName = this.options.uaaBaseName;
+                    this.configOptions.realmName = this.options.realmName;
                 }
                 this.configOptions.clientPackageManager = this.clientPackageManager;
             },

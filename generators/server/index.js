@@ -246,6 +246,7 @@ module.exports = class extends BaseGenerator {
                 this.nativeLanguage = configuration.get('nativeLanguage');
                 this.languages = configuration.get('languages');
                 this.uaaBaseName = configuration.get('uaaBaseName');
+                this.realmName = configuration.get('realmName');
                 this.clientFramework = configuration.get('clientFramework');
                 const testFrameworks = configuration.get('testFrameworks');
                 if (testFrameworks) {
@@ -342,6 +343,7 @@ module.exports = class extends BaseGenerator {
                 this.configOptions.enableSwaggerCodegen = this.enableSwaggerCodegen;
                 this.configOptions.authenticationType = this.authenticationType;
                 this.configOptions.uaaBaseName = this.uaaBaseName;
+                this.configOptions.realmName = this.realmName;
                 this.configOptions.serverPort = this.serverPort;
 
                 // Make dist dir available in templates
@@ -415,6 +417,7 @@ module.exports = class extends BaseGenerator {
                     serverPort: this.serverPort,
                     authenticationType: this.authenticationType,
                     uaaBaseName: this.uaaBaseName,
+                    realmName: this.realmName,
                     cacheProvider: this.cacheProvider,
                     enableHibernateCache: this.enableHibernateCache,
                     websocket: this.websocket,

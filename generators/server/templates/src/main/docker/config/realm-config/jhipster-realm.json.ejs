@@ -1,6 +1,6 @@
 {
-  "id": "jhipster",
-  "realm": "jhipster",
+  "id": "<%= realmName %>",
+  "realm": "<%= realmName %>",
   "notBefore": 0,
   "revokeRefreshToken": false,
   "refreshTokenMaxReuse": 0,
@@ -42,7 +42,7 @@
         "description": "Jhipster administrator role",
         "composite": false,
         "clientRole": false,
-        "containerId": "jhipster"
+        "containerId": "<%= realmName %>"
       },
       {
         "id": "932ca70d-a311-42f9-9042-431cef835b9e",
@@ -50,7 +50,7 @@
         "description": "${role_offline-access}",
         "composite": false,
         "clientRole": false,
-        "containerId": "jhipster"
+        "containerId": "<%= realmName %>"
       },
       {
         "id": "8b1a0e78-24be-49ed-bc74-6471bd8d0f8f",
@@ -58,7 +58,7 @@
         "description": "Jhipster user role",
         "composite": false,
         "clientRole": false,
-        "containerId": "jhipster"
+        "containerId": "<%= realmName %>"
       },
       {
         "id": "96c0124c-0f00-4769-8cd3-f7dfd74a0af3",
@@ -66,7 +66,7 @@
         "description": "${role_uma_authorization}",
         "composite": false,
         "clientRole": false,
-        "containerId": "jhipster"
+        "containerId": "<%= realmName %>"
       }
     ],
     "client": {
@@ -275,7 +275,7 @@
       "security-admin-console": [],
       "web_app": [],
       "admin-cli": [],<% if (serviceDiscoveryType === 'eureka') { %>
-      "jhipster-registry": [],<% } %>
+      "<%= realmName %>-registry": [],<% } %>
       "broker": [
         {
           "id": "225066d4-4a07-4550-a851-3d9359cbbac2",
@@ -375,13 +375,13 @@
       "id": "0aa176c1-8d28-4a8b-8e97-7e4b49a289ff",
       "clientId": "security-admin-console",
       "name": "${client_security-admin-console}",
-      "baseUrl": "/auth/admin/jhipster/console/index.html",
+      "baseUrl": "/auth/admin/<%= realmName %>/console/index.html",
       "surrogateAuthRequired": false,
       "enabled": true,
       "clientAuthenticatorType": "client-secret",
       "secret": "**********",
       "redirectUris": [
-        "/auth/admin/jhipster/console/*"
+        "/auth/admin/<%= realmName %>/console/*"
       ],
       "webOrigins": [],
       "notBefore": 0,
@@ -465,7 +465,7 @@
       "id": "e07da50b-cddc-4524-b630-436a5a6ba8ab",
       "clientId": "account",
       "name": "${client_account}",
-      "baseUrl": "/auth/realms/jhipster/account",
+      "baseUrl": "/auth/realms/<%= realmName %>/account",
       "surrogateAuthRequired": false,
       "enabled": true,
       "clientAuthenticatorType": "client-secret",
@@ -475,7 +475,7 @@
         "manage-account"
       ],
       "redirectUris": [
-        "/auth/realms/jhipster/account/*"
+        "/auth/realms/<%= realmName %>/account/*"
       ],
       "webOrigins": [],
       "notBefore": 0,

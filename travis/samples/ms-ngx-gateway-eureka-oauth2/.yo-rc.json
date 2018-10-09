@@ -5,6 +5,7 @@
     "packageName": "io.github.jhipster.travis",
     "packageFolder": "io/github/jhipster/travis",
     "authenticationType": "oauth2",
+    "realmName": "jhipster",
     "cacheProvider": "hazelcast",
     "enableHibernateCache": true,
     "websocket": false,
